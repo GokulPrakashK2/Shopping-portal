@@ -20,10 +20,10 @@ public class LoginController {
         return loginService.authenticateUser(loginRequest)
                 .map(response->new ResponseWrapper(true,response,null));
     }
-//
-//    @PostMapping("/sign-up")
-//    public Mono<ResponseWrapper> signUpUser(@RequestBody SignUpRequest sign){
-//        return loginService.registerUser(sign);
-//    }
+
+    @PostMapping("/sign-up")
+    public Mono<ResponseWrapper> signUpUser(@RequestBody SignUpRequest sign){
+        return loginService.registerUser(sign);
+    }
 
 }

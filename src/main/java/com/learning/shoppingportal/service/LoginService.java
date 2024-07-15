@@ -46,14 +46,14 @@ public class LoginService {
                         .build());
     }
 
-//    public Mono<ResponseWrapper> registerUser(SignUpRequest loginRequest) {
-//        UserDetails userDetails=new UserDetails();
-//        userDetails.setAddress(loginRequest.getAddress());
-//        userDetails.setFirstName(loginRequest.getFirstName());
-//        userDetails.setLastName(loginRequest.getLastName());
-//        userDetails.setPassword(loginRequest.getPassword());
-//        userDetailRepo.save(userDetails);
-//        ResponseWrapper<String> responseWrapper=ResponseWrapper.<String>builder().data("").success(true).build();
-//        return Mono.just(responseWrapper);
-//    }
+    public Mono<ResponseWrapper> registerUser(SignUpRequest loginRequest) {
+        UserDetails userDetails=new UserDetails();
+        userDetails.setAddress(loginRequest.getAddress());
+        userDetails.setFirstName(loginRequest.getFirstName());
+        userDetails.setLastName(loginRequest.getLastName());
+        userDetails.setPassword(loginRequest.getPassword());
+        userDetailRepo.save(userDetails);
+        ResponseWrapper<String> responseWrapper=ResponseWrapper.<String>builder().data("").success(true).build();
+        return Mono.just(responseWrapper);
+    }
 }
