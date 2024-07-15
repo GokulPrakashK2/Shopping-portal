@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    username: root
+    url: jdbc:mysql://localhost:3306/shoppingportal
+    password: "Prakashk@5094"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+security:
+  ignored=/**:
+  enable-csrf: false
+
+server:
+  port: 8081
