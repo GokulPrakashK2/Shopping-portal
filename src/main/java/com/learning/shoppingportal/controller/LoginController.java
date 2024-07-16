@@ -20,10 +20,16 @@ public class LoginController {
         return loginService.authenticateUser(loginRequest)
                 .map(response->new ResponseWrapper(true,response,null));
     }
-//
-//    @PostMapping("/sign-up")
-//    public Mono<ResponseWrapper> signUpUser(@RequestBody SignUpRequest sign){
-//        return loginService.registerUser(sign);
-//    }
+
+    /**
+     * Registers a new user by calling the 'registerUser' method of the 'LoginService' class.
+     *
+     * @param sign The SignUpRequest object containing the new user's details.
+     * @return A Mono emitting a ResponseWrapper object representing the registration response.
+     */
+    @PostMapping("/sign-up")
+    public Mono<ResponseWrapper> signUpUser(@RequestBody SignUpRequest sign){
+        return loginService.registerUser(sign);
+    }
 
 }
